@@ -4,6 +4,7 @@ const screen = document.getElementById('screen');
 
 //console.log("Connected");
 
+
 for(let btn of buttons){
 
 
@@ -14,6 +15,11 @@ for(let btn of buttons){
 
         if(buttonText==='C')screen.value = "";
         else if(buttonText==='^')screen.value+='**'; 
+        else if(buttonText==="backspace"){
+            str = screen.value;
+            str = str.substring(0, str.length - 1);
+            screen.value = str;
+        }
         else if(buttonText==='x')screen.value+='*';
         else if(buttonText==='='){
             try{
